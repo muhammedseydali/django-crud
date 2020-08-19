@@ -1,0 +1,78 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action=""  enctype="multipart/form-data">  
+        {% csrf_token %} 
+        {{ form.as_p }}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>ENTER YOUR DETAILS</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">first name:</label>  
+    <div class="col-sm-4">  
+      {{ add.first_name }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">last name:</label>  
+    <div class="col-sm-4">  
+      {{ add.last_name }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">enter department:</label>  
+    <div class="col-sm-4">  
+      {{ add.department }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">enter your address</label>  
+    <div class="col-sm-4">  
+      {{ add.address }}  
+    </div>
+  </div>
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">contact number</label>  
+    <div class="col-sm-4">  
+      {{ add.contact_number }}  
+    </div>
+  </div>   
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">email address</label>  
+    <div class="col-sm-4">  
+      {{ add.email }}  
+    </div>
+  </div>   
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label"> select profile picture</label>  
+    <div class="col-sm-4">  
+      {{ add.profile_picture }}  
+    </div>
+  </div>
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+  </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  

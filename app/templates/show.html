@@ -1,0 +1,52 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   
+    <meta charset="UTF-8">  
+    <title>Insertion Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <img src="/upload/images" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
+
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>first name</th>  
+        <th>last name</th>  
+        <th>department</th>  
+        <th>address</th>
+        <th>contact number</th>  
+        <th>email adress</th>
+        <th>profile picture</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for addition in add1 %}  
+    <tr>  
+        <td>{{ addition.first_name }}</td>  
+        <td>{{ addition.last_name }}</td>  
+        <td>{{ addition.department }}</td>  
+        <td>{{ addition.address }}</td>
+        <td>{{ addition.contact_number }}</td>
+        <td>{{ addition.email }}</td>
+        <td><img src="{{addition.profile_picture.url}}" class="img-circle" alt="" width="50" height="50"> 
+</td>  
+        <td>  
+            <a href="/app/edit/{{ addition.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/app/delete/{{ addition.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/app/insertion/" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  
